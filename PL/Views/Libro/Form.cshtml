@@ -1,0 +1,78 @@
+﻿@model ML.Libro
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Libro</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Form", "Libro", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.IdLibro, new { style = "display:none;" })
+                            @Html.TextBoxFor(model => model.IdLibro, new { style = "display:none;" })
+                            @Html.ValidationMessageFor(model => model.IdLibro)
+                            @*hidden*@
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Nombre)
+                            <div class="input-group">
+                                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre" })
+                                @Html.ValidationMessageFor(model => model.Nombre)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.FechaPublicacion)
+                            <div class="input-group">
+                                @Html.TextBoxFor(model => model.FechaPublicacion, new { @class = "form-control", @id = "txtApellidoPaterno" })
+                                @Html.ValidationMessageFor(model => model.FechaPublicacion)
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.NumeroPaginas)
+                            <div class="input-group">
+                                @Html.TextBoxFor(model => model.NumeroPaginas, new { @class = "form-control", @id = "txtApellidoMaterno" })
+                                @Html.ValidationMessageFor(model => model.NumeroPaginas)
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Autor)
+                            <div class="input-group">
+                                @Html.DropDownListFor(model => model.Autor.IdAutor, new SelectList(Model.Autor.Autores, "IdAutor", "Nombre"), "Selecciona el rol correspondiente", new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    </div>                 
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="submit" value="Guardar" class="btn btn-success" />
+                            </div>
+                            <div class="input-group">
+                                @Html.ActionLink("Regresar", "GetAll", "Libro", htmlAttributes: new { @class = "btn btn-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

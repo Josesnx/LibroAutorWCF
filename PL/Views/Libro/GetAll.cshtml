@@ -1,0 +1,64 @@
+﻿@model ML.Libro
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>Libro</h2>
+    </div>
+    <hr />
+    <div class="row">
+        <div style="float:right">
+            @Html.ActionLink("Agregar Libro", "Form", "Libro", htmlAttributes: new { @class = "btn btn-success" })
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        @if (Model.Libros != null)
+        {
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <td class="text-center" style=" font-weight:bold;">Editar</td>
+
+                        <td style="display:none;">IdLibro</td>
+                        <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                        <td class="text-center" style=" font-weight:bold;">Fecha Publicacion</td>
+                        <td class="text-center" style=" font-weight:bold;">Numero de paginas</td>
+                        <td class="text-center" style=" font-weight:bold;">Autor</td>
+
+                        <td class="text-center" style=" font-weight:bold;">Eliminar</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (ML.Libro libro in Model.Libros)
+                    {
+                        <tr>
+                            <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Libro", new { IdLibro = libro.IdLibro })"></a></td>
+
+                            <td style="display:none;">@libro.IdLibro</td>
+                            <td>@libro.Nombre</td>
+                            <td>@libro.FechaPublicacion</td>
+                            <td>@libro.NumeroPaginas</td>
+                            <td>@libro.Autor.Nombre</td>
+
+
+                            <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Libro", new { IdLibro = libro.IdLibro })" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+        }
+        else
+        {
+            <div class="alert alert-danger" role="alert">Ocurrio un error al realizar la consulta </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5aa7ca2d-5da8-46df-97f4-70193fab8afd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56946/Libro.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Libro.xsd" MetadataType="Schema" ID="a163369e-9ae9-4d66-b452-6843edc1e36c" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?xsd=xsd1" />
+    <MetadataFile FileName="Libro1.xsd" MetadataType="Schema" ID="0868c243-3dd4-4b4e-b590-d33633ec001d" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?xsd=xsd2" />
+    <MetadataFile FileName="Libro2.xsd" MetadataType="Schema" ID="f3262af1-2f7d-4ad4-97fc-542b17237ed0" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?xsd=xsd3" />
+    <MetadataFile FileName="Libro3.xsd" MetadataType="Schema" ID="50ced2c2-2acf-4416-92a8-93df45aa71f3" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?xsd=xsd4" />
+    <MetadataFile FileName="Libro.disco" MetadataType="Disco" ID="3d91094b-ffcb-4b9a-a4eb-bd4ccc54b2fb" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?disco" />
+    <MetadataFile FileName="Libro.wsdl" MetadataType="Wsdl" ID="77c74c73-a1af-4f1e-9bca-9662ecf9967b" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?wsdl" />
+    <MetadataFile FileName="Libro4.xsd" MetadataType="Schema" ID="b8a30c24-6698-4e88-9935-1d7c1ee9ed34" SourceId="1" SourceUrl="http://localhost:56946/Libro.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
